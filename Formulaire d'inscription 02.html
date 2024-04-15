@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        button {
+            width: 40%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        select {
+            width: 40%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            appearance: none;
+        }
+
+        button {
+            width: 40%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Registration form for learning a skill -->
+    <h2>Offer a Skill</h2>
+    <form action="#" method="post">
+        <label for="offer_skill_name">Skill Name:</label><br>
+        <select id="offer_skill_name" name="offer_skill_name">
+            <option value="Programming">Programming</option>
+            <option value="Culinary Arts">Culinary Arts</option>
+            <option value="Sewing">Sewing</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Fine Arts Drawing">Fine Arts Drawing</option>
+        </select><br>
+        <label for="experience_level">Experience Level:</label><br>
+        <select id="experience_level" name="experience_level">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+        </select><br>
+        <label for="offer_name">Full Name:</label><br>
+        <input type="text" id="offer_name" name="offer_name"><br>
+        <label for="date_of_birth">Date of Birth:</label><br>
+        <input type="date" id="date_of_birth" name="date_of_birth"><br>
+        <label for="offer_email">Email:</label><br>
+        <input type="email" id="offer_email" name="offer_email"><br>
+        <button onclick ="registerCourse()" value="Register">Register</button>
+    </form>
+<script>
+        function registerCourse() {
+            alert("Thank you, it will come to you in the course We meet soon");
+        
+        }
+    </script>
+</body>
+</html>
