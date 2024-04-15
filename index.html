@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسجيل الدخول</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #00008B;
+        margin-top:20px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-decoration:none;
+        font-size:1.6em;
+        font-weight:400;
+        background:#8FBC8F;
+       
+    }
+    .container {
+        width:300px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align:center;
+
+
+    }
+    h2 {
+        text-align: center;
+    }
+    input[type="text"], input[type="password"], input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+.login {
+   text-decoration:none;
+   margin-top:10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Log in</h2>
+    <form id="loginForm">
+        <input type="text" id="usernameOrEmail" placeholder="اسم المستخدم أو البريد الإلكتروني" required>
+        <input type="password" id="password" placeholder="كلمة المرور" required>
+        <input type="submit" value="تسجيل الدخول">
+    </form>
+<a class="login" href ="Register.html">Register</a>
+</div>
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var usernameOrEmail = document.getElementById("usernameOrEmail").value;
+        var password = document.getElementById("password").value;
+        var users = JSON.parse(localStorage.getItem("users")) || [];
+        var loggedInUser = users.find(function(user) {
+            return (user.username === usernameOrEmail || user.email === usernameOrEmail) && user.password === password;
+        });
+        if (loggedInUser) {
+           window.location.href = "Home.html";
+        } else {
+            alert("اسم المستخدم أو البريد الإلكتروني أو كلمة المرور غير صحيحة!");
+        }
+    });
+</script>
+</body>
+</html>

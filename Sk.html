@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Skill</title>
+    <style>
+       body {
+           font-family: 'Roboto Slab', serif;
+    font-weight: 800px;
+    font-style: italic;
+    
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            text-align: center;
+        }
+
+        .skill-button {
+       color: #fff;
+background-color: #6d50af;
+text-decoration: none;
+font-size: 1.1em;
+font-weight:600;
+display: inline-block;
+padding: 0.9375em 2.1875em;
+letter-spacing: 1px;
+border-radius: 15px;
+margin-bottom: 40px;
+transition: 0.7s ease;
+        }
+
+        .skill-button:hover {
+            background-color: #0056b3;
+        }
+
+        .skill-button.programming {
+            background-color: #f44336;
+        }
+
+        .skill-button.culinary {
+            background-color: #4caf50;
+        }
+
+        .skill-button.sewing {
+            background-color: #ff9800;
+        }
+
+        .skill-button.design {
+            background-color: #673ab7;
+        }
+
+        .skill-button.drawing {
+            background-color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose a Skill</h1>
+    <div class="skills">
+        <a class="skill-button programming" onclick="redirectToProgramming()">Programming</a>
+        <a class="skill-button culinary" onclick="displayMessage('Culinary Arts')">Culinary Arts</a>
+        <a class="skill-button sewing" onclick="displayMessage('Sewing')">Sewing</a>
+        <a class="skill-button design" onclick="displayMessage('Graphic Design')">Graphic Design</a>
+        <a class="skill-button drawing" onclick="displayMessage('Fine Arts Drawing')">Fine Arts Drawing</a>
+    </div>
+    <script>
+        function redirectToProgramming() {
+            window.location.href = "programming.html";
+        }
+
+        function displayMessage(skill) {
+            alert("No content currently available for " + skill);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .course {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        .course h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .course p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .enroll-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .enroll-button:hover {
+            background-color: #0056b3;
+        }
+.course a{
+text-decoration:none;
+}
+    </style>
+</head>
+<body>
+    <h1>Programming Options</h1>
+
+    <div class="course">
+       <a href ="Formulaire d'inscription 02.html"> <h2>Web Development</h2></a>
+        <p>Learn the basics of HTML, CSS, and JavaScript to build websites.</p>
+        <button class="enroll-button" onclick="registerCourse('Web Development')">Enroll</button>
+    </div>
+
+    <div class="course">
+        <h2>Mobile App Development</h2>
+        <p>Explore mobile app development with frameworks like React Native or Flutter.</p>
+        <button class="enroll-button" onclick="registerCourse('Mobile App Development')">Enroll</button>
+    </div>
+
+    <div class="course">
+        <h2>Cyber Security</h2>
+        <p>Learn about cybersecurity principles, tools, and techniques to protect data and systems.</p>
+        <button class="enroll-button" onclick="registerCourse('Cyber Security')">Enroll</button>
+    </div>
+
+    <script>
+        function registerCourse(course) {
+            alert("You have enrolled in the course: " + course);
+        
+        }
+    </script>
+</body>
+</html>

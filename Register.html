@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسجيل مستخدم جديد</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin-top:10px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-decoration:none;
+        font-size:1.4em;
+        font-weight:300;
+       
+    }
+    .container {
+        width:300px;
+        height :350px;
+        margin: 70px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   text-align:center;
+    }
+    h2 {
+        text-align: center;
+    }
+    input[type="text"], input[type="password"],input[type="email"] ,input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+ a {
+   text-decoration:none;
+   margin-top:10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Register</h2>
+    <form id="signupForm">
+        <input type="text" id="newUsername" placeholder="اسم المستخدم الجديد" required>
+        <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+        <input type="password" id="newPassword" placeholder="كلمة المرور الجديدة" required>
+        <input type="submit" value="Register">
+
+<a href ="index.html">Log in</a>
+
+    </form>
+</div>
+
+<script>
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var newUsername = document.getElementById("newUsername").value;
+        var newEmail = document.getElementById("email").value;
+        var newPassword = document.getElementById("newPassword").value;
+        var users = JSON.parse(localStorage.getItem("users")) || [];
+        var existingUser = users.find(function(user) {
+            return user.email === newEmail;
+        });
+        if (existingUser) {
+            alert("البريد الإلكتروني موجود بالفعل!");
+        } else {
+            users.push({username: newUsername, email: newEmail, password: newPassword});
+            localStorage.setItem("users", JSON.stringify(users));
+            
+           window.location.href = "index.html";
+        }
+    });
+</script>
+</body>
+</html>
